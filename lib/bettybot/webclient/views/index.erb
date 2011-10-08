@@ -10,11 +10,16 @@
       <% unless @message.nil? %>
         <ul id="conversation">
           <li class="message mirror"><p>Hello World!</p><img src="/human.png" width="48" height="48" alt="" /></li>
-          <li class="message"><img src="/bot.png" width="48" height="48" alt="" /><p>[<%= @message.time %>] <%= @message.author %>: <%= @message.text %></p></li>
+          <li class="message">
+            <img src="/bot.png" width="48" height="48" alt="" />
+            <p>
+              <strong><%= @message.author %>:</strong> <%= @message.text %><br /><small>[<%= @message.time %>]</small>
+            </p>
+          </li>
         </ul>
       <% end %>
       <form action="/" method="post">
-        <textarea name="message"></textarea>
+        <input type="text" name="message" autofocus="autofocus" />
         <input type="submit" value="Send" />
       </form>
     </div>

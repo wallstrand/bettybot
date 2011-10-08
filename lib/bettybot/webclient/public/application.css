@@ -55,7 +55,7 @@ table {
   margin: 0 auto;
 }
 
-textarea {
+input[type=text] {
   width: 100%;
 }
 
@@ -94,4 +94,12 @@ textarea {
   float: right;
   margin-right: 0;
   margin-left: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 10px;
 }
