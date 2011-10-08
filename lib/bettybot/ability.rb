@@ -12,8 +12,8 @@ module Bettybot
       return @@all
     end
 
-    def say(message)
-      Bettybot::Message.new 'Betty', Time.now, message
+    def say(message, data = nil)
+      Bettybot::Message.new 'Betty', Time.now, message, data
     end
   end
 

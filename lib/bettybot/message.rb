@@ -2,21 +2,21 @@ module Bettybot
 
   class Message
 
-    attr_reader :author, :time, :text, :object
+    attr_reader :author, :time, :text, :data
 
-    def initialize(author, time, text, object = nil)
+    def initialize(author, time, text, data = nil)
       @author = author
       @time = time
       @text = text
-      @object = object
+      @data = data
     end
 
     def to_hash
-      { author: @author, time: @time, text: @text, object: @object }
+      { author: @author, time: @time, text: @text, data: @data }
     end
 
     def self.from_hash(hash)
-      Message.new hash['author'], hash['time'], hash['text'], hash['object']
+      Message.new hash['author'], hash['time'], hash['text'], hash['data']
     end
 
   end
