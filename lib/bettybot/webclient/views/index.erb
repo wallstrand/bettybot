@@ -22,7 +22,7 @@
                     <% end %>
                   <% end %>
                 <% end %>
-                <small><%= message.time %></small>
+                <small><%= message.time.localtime.strftime("%Y-%m-%d %H:%M") %></small>
                 </p>
               </li>
           <% end %>
