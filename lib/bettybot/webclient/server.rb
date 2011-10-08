@@ -6,11 +6,13 @@ require 'sinatra'
 require 'bettybot'
 
 get '/' do
+  betty = Bettybot::Betty.new
+  @messages = betty.memories
   erb :index
 end
 
 post '/' do
   betty = Bettybot::Betty.new
-  @message = betty.reply_to Bettybot::Message.new('User', Time.now, params[:message])
-  erb :index
+  betty.reply_to Bettybot::Message.new('User', Time.now, params[:message])
+  redirect '/'
 end
