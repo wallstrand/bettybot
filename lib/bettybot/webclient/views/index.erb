@@ -14,14 +14,14 @@
                 <img src="/<%= message.author == 'Betty' ? 'bot' : 'human' %>.png" width="48" height="48" alt="" />
                 <p>
                 <strong><%= message.author %>:</strong>
+                <%= message.text %><br />
                 <% unless message.data.nil? %>
                   <% if message.data.has_key? 'url' %>
                     <% if File.extname(message.data['url']).match /\.(jpg|gif|png|jpeg)/i %>
-                      <img src="<%= message.data['url'] %>" alt="" />
+                      <br /><img src="<%= message.data['url'] %>" alt="" />
                     <% end %>
                   <% end %>
                 <% end %>
-                <%= message.text %><br />
                 <small>[<%= message.time %>]</small>
                 </p>
               </li>
