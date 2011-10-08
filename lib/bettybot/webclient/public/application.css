@@ -52,11 +52,19 @@ table {
 
 #content {
   width: 480px;
+  height: 100%;
   margin: 0 auto;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 85%;
+}
+
+html, body { height: 100%; }
+
+#conversation {
+  height: 90%;
+  overflow: scroll;
 }
 
 .message {
@@ -102,4 +110,8 @@ strong {
 
 small {
   font-size: 10px;
+}
+
+form {
+  margin-top: 10px;
 }

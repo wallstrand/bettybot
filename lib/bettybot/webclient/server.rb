@@ -14,5 +14,5 @@ end
 post '/' do
   betty = Bettybot::Betty.new
   betty.reply_to Bettybot::Message.new('You', Time.now, params[:message])
-  redirect '/'
+  redirect '/#latest'
 end
