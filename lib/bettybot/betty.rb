@@ -1,8 +1,8 @@
-module BettyBot
+module Bettybot
 
   class Betty
 
-    def respond_to(message)
+    def reply_to(message)
       message
     end
 
