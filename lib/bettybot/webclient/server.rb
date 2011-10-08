@@ -13,6 +13,6 @@ end
 
 post '/' do
   betty = Bettybot::Betty.new
-  betty.reply_to Bettybot::Message.new('User', Time.now, params[:message])
+  betty.reply_to Bettybot::Message.new('You', Time.now, params[:message])
   redirect '/'
 end
