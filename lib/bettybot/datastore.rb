@@ -14,7 +14,7 @@ module Bettybot
     end
 
     def all
-      @collection.find
+      @collection.find({}, {sort: 'time'})
     end
 
   end
