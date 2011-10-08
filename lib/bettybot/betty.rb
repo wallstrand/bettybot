@@ -3,7 +3,7 @@ module Bettybot
   class Betty
 
     def reply_to(message)
-      message
+      Bettybot::Reply.new message
     end
 
   end

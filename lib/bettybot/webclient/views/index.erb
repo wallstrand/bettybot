@@ -5,9 +5,11 @@
     <title>Betty Bot</title>
   </head>
   <body>
-    <ul>
-      <li><%= @reply %></li>
-    </ul>
+    <% unless @reply.nil? %>
+      <ul>
+        <li><%= @reply.text %></li>
+      </ul>
+    <% end %>
     <form action="/" method="post">
       <textarea name="message"></textarea>
       <input type="submit" value="Send" />
