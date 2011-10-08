@@ -2,7 +2,7 @@
 
 require 'sinatra'
 
-require 'lib/bettybot'
+require_relative '../lib/bettybot'
 
 get '/' do
   erb :index
