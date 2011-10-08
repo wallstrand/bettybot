@@ -6,7 +6,7 @@ require 'net/http'
 module Bettybot::Abilities
  class ForecastWeather < Bettybot::Ability
   def process(message)
-    if message.text.match /umbrella/i
+    if message.text.match(/umbrella/i) || message.text.match(/rain/i)
       say will_it_rain_in_jkpg_today? ? "You should bring an umbrella today!" : "There will be no rain today mate!"
     else
       nil
