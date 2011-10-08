@@ -3,16 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Betty Bot</title>
+    <link rel="stylesheet" href="/application.css" type="text/css" media="screen" />
   </head>
   <body>
-    <% unless @message.nil? %>
-      <ul>
-        <li>[<%= @message.time %>] <%= @message.author %>: <%= @message.text %></li>
-      </ul>
-    <% end %>
-    <form action="/" method="post">
-      <textarea name="message"></textarea>
-      <input type="submit" value="Send" />
-    </form>
+    <div id="content">
+      <% unless @message.nil? %>
+        <ul id="conversation">
+          <li class="message mirror"><p>Hello World!</p><img src="/human.png" width="48" height="48" alt="" /></li>
+          <li class="message"><img src="/bot.png" width="48" height="48" alt="" /><p>[<%= @message.time %>] <%= @message.author %>: <%= @message.text %></p></li>
+        </ul>
+      <% end %>
+      <form action="/" method="post">
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send" />
+      </form>
+    </div>
   </body>
 </html>
