@@ -5,9 +5,9 @@
     <title>Betty Bot</title>
   </head>
   <body>
-    <% unless @reply.nil? %>
+    <% unless @message.nil? %>
       <ul>
-        <li><%= @reply.text %></li>
+        <li>[<%= @message.time %>] <%= @message.author %>: <%= @message.text %></li>
       </ul>
     <% end %>
     <form action="/" method="post">

@@ -11,6 +11,6 @@ end
 
 post '/' do
   betty = Bettybot::Betty.new
-  @reply = betty.reply_to params[:message]
+  @message = betty.reply_to Bettybot::Message.new('User', Time.now, params[:message])
   erb :index
 end

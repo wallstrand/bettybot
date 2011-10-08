@@ -1,7 +1,7 @@
 require "bettybot/version"
 
 require 'bettybot/betty'
-require 'bettybot/reply'
+require 'bettybot/message'
 
 module Bettybot
   # Your code goes here...
