@@ -5,8 +5,15 @@ module Bettybot
     COLLECTION_NAME = 'messages'
 
     def reply_to(message)
-      reply = Bettybot::Message.new 'Betty', Time.now, message.text
-      remember message, reply
+      remember message
+      Bettybot::Ability::all.each do |klass|
+        ability = klass.new
+        reply = ability.process message
+
+        return remember reply if reply
+      end
+
+      nil
     end
 
     def memories
@@ -18,10 +25,9 @@ module Bettybot
 
     private
 
-    def remember(message, reply)
+    def remember(message)
       datastore = Datastore.new COLLECTION_NAME
       datastore.store message
-      datastore.store reply
     end
 
   end
