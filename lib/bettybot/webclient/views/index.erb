@@ -14,7 +14,7 @@
                 <img src="/<%= message.author == 'Betty' ? 'bot' : 'human' %>.png" width="48" height="48" alt="" />
                 <p>
                 <strong><%= message.author %>:</strong>
-                <%= message.text %><br />
+                <%= message.text.gsub "\n", '<br />' %><br />
                 <% unless message.data.nil? %>
                   <% if message.data.has_key? 'url' %>
                     <% if File.extname(message.data['url']).match /\.(jpg|gif|png|jpeg)/i %>
