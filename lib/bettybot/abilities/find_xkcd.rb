@@ -7,9 +7,9 @@ module Bettybot::Abilities
  class FindXKCD < Bettybot::Ability
 
   def process(message)
-    matches = /xkcd.*about (.+)/i.match message.text
+    matches = /xkcd.*(about|with) (.+)/i.match message.text
     if matches
-      search_phrase = matches[1]
+      search_phrase = matches[2]
 
       agent = Mechanize.new { |agent|
         agent.user_agent_alias = 'Mac Safari'
