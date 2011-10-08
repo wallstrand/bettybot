@@ -11,14 +11,14 @@
         <ul id="conversation">
           <% @messages.each do |message| %>
             <% if message.author == 'Betty' %>
-              <li class="message mirror">
+              <li class="message">
                 <img src="/bot.png" width="48" height="48" alt="" />
                 <p>
                   <strong><%= message.author %>:</strong> <%= message.text %><br /><small>[<%= message.time %>]</small>
                 </p>
               </li>
             <% else %>
-              <li class="message">
+              <li class="message mirror">
                 <img src="/human.png" width="48" height="48" alt="" />
                 <p>
                   <strong><%= message.author %>:</strong> <%= message.text %><br /><small>[<%= message.time %>]</small>
