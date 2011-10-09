@@ -16,6 +16,10 @@ module Bettybot::Abilities
   def will_it_rain_in_jkpg_today?
     !Net::HTTP.get('www.yr.no', '/place/Sweden/J%C3%B6nk%C3%B6ping/J%C3%B6nk%C3%B6ping/forecast.rss').include? "No precipitation"
   end
+
+  def description
+    "Show the weather"
+  end
  end
 end
 

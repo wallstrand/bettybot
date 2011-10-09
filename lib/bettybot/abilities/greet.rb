@@ -10,5 +10,10 @@ module Bettybot::Abilities
       nil
     end
   end
+
+  def description
+    "Say hello"
+  end
+
  end
 end

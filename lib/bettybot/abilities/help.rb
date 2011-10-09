@@ -4,12 +4,16 @@ module Bettybot::Abilities
 
  class Help < Bettybot::Ability
 
-   def process(message)
+  def process(message)
     if message.text.match /^help$/i
       say "This is the help text"
     else
       nil
     end
+  end
+
+  def description
+    "Get help"
   end
 
  end

@@ -43,6 +43,10 @@ module Bettybot::Abilities
     end
   end
 
+  def description
+    "Shows what's for lunch"
+  end
+
  end
 
 end

@@ -50,6 +50,11 @@ module Bettybot::Abilities
   def installation_instructions
     say 'You have to install Telldus Center for me to do that! Go to http://www.telldus.se/products/nativesoftware'
   end
+
+  def description
+    "Manages lights"
+  end
+
  end
 end
 
