@@ -1,4 +1,9 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in bettybot.gemspec
-gemspec
+gem 'sinatra'
+gem 'shotgun'
+gem 'mongo'
+gem 'bson_ext'
+gem 'mechanize'
+gem 'coffee-script'
+gem 'therubyracer'
