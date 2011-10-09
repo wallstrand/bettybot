@@ -47,6 +47,10 @@ module Bettybot::Abilities
     "Shows what's for lunch"
   end
 
+  def usage
+    "Type what's for lunch or lunch options to get what's for lunch today"
+  end
+
  end
 
 end

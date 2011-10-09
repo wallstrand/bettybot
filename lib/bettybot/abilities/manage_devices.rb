@@ -55,6 +55,10 @@ module Bettybot::Abilities
     "Manages lights"
   end
 
+  def usage
+    "Type turn on or turn of to turn on/off the lights"
+  end
+
  end
 end
 

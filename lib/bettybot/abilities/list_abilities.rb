@@ -21,6 +21,10 @@ module Bettybot::Abilities
      "Lists all abilities"
    end
 
+   def usage
+     "Type list abilities or only abilities to list all abilities"
+   end
+
  end
 end
 

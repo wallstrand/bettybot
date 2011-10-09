@@ -20,6 +20,10 @@ module Bettybot::Abilities
   def description
     "Show the weather"
   end
+
+  def usage
+    "Type the word umbrella to get an aswer about if you should bring an umbrella today"
+  end
  end
 end
 

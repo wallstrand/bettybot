@@ -17,8 +17,13 @@ module Bettybot
     end
 
     def description
-      "This is the standard ability description. Each description should overwrite this."
+      "This is the standard ability description. Each ability should overwrite this."
     end
+
+    def usage
+      "This is the standard ability usage description. Each ability should overwrite this."
+    end
+
   end
 
 end

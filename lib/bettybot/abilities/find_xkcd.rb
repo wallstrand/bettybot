@@ -57,6 +57,10 @@ module Bettybot::Abilities
     "Find a XKCD strip by searching"
   end
 
+  def usage
+    "Type xcd about search phrase"
+  end
+
  end
 
 end
