@@ -22,6 +22,9 @@ post '/' do
 end
 
 helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+
   def message_attributes(message, messages)
     attributes = ''
     attributes += ' id="latest"' if message == messages.last

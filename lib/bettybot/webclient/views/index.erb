@@ -19,7 +19,7 @@
               <%= author_avatar message %>
               <p>
                 <strong><%= message.author %>:</strong>
-                <%= message.text.gsub(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:\/~\+#]*[\w\-\@?^=%&amp;\/~\+#])?)/, '<a href="\1">\1</a>').gsub("\n", '<br />') %><br />
+                <%=h message.text.gsub(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:\/~\+#]*[\w\-\@?^=%&amp;\/~\+#])?)/, '<a href="\1">\1</a>').gsub("\n", '<br />') %><br />
                 <%= media_from message %>
                 <small><%= message.time.localtime.strftime("%Y-%m-%d %H:%M") %></small>
               </p>
