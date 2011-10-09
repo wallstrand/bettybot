@@ -2,7 +2,7 @@ require 'bettybot/ability'
 
 module Bettybot::Abilities
 
- class Greet < Bettybot::Ability
+ class Help < Bettybot::Ability
 
    def process(message)
     if message.text.match /^help$/i
