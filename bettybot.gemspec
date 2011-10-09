@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'mongo'
   s.add_dependency 'bson_ext'
   s.add_dependency 'mechanize'
+  s.add_dependency 'coffee-script'
+  s.add_dependency 'therubyracer'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

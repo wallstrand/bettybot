@@ -5,6 +5,12 @@ $:.push File.expand_path("../../..", __FILE__)
 require 'sinatra'
 require 'bettybot'
 
+require 'coffee-script'
+
+get '/application.js' do
+  coffee :application
+end
+
 get '/' do
   betty = Bettybot::Betty.new
   @messages = betty.memories
