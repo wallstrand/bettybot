@@ -22,6 +22,8 @@ $ ->
         messagesToAppend.push message
       )
 
+      $('#latest').removeAttr('id')
+
       $('#conversation').append(messagesToAppend).animate({
         scrollTop: $('#conversation').prop('scrollHeight')
       }, 1500)
