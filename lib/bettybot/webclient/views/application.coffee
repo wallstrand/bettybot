@@ -26,7 +26,11 @@ $ ->
         scrollTop: $('#conversation').prop('scrollHeight')
       }, 1500)
 
-      messages.find('p').effect("highlight", {}, 1500)
+      messages.find('img').each( (index, image) ->
+        $(image).wrap('<a href="'+$(image).attr('src')+'" rel="shadowbox">')
+      )
+
+      Shadowbox.init({ skipSetup: true }); Shadowbox.setup();
 
       $('#chat')[0].reset()
     )
