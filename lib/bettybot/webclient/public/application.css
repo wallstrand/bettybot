@@ -61,6 +61,17 @@ body { background: rgb(238, 241, 246); }
   width: 99%;
 }
 
+#information {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  width: 350px;
+}
+
+#information p {
+  font-size: 14px;
+}
+
 form {
   margin: 0 auto;
   margin-top: 10px;
