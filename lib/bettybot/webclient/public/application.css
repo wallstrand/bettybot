@@ -84,7 +84,7 @@ html, body { height: 100%; }
 .message p {
   background: rgb(255, 255, 255);
   float: left;
-  width: 398px;
+  width: 382px;
   padding: 10px;
   border: solid 1px rgb(214, 217, 221);
   border-radius: 5px;
