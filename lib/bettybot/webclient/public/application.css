@@ -118,5 +118,7 @@ small {
 }
 
 form {
+  margin: 0 auto;
   margin-top: 10px;
+  width: 382px;
 }
