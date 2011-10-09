@@ -24,7 +24,8 @@ $ ->
 
       $('#latest').removeAttr('id')
 
-      $('#conversation').append(messagesToAppend).animate({
+      $('#conversation ul').append(messagesToAppend)
+      $('#conversation').animate({
         scrollTop: $('#conversation').prop('scrollHeight')
       }, 1500)
 

@@ -13,6 +13,10 @@ body { background: rgb(238, 241, 246); }
   overflow-y: scroll;
 }
 
+#conversation ul {
+  list-style-type: none;
+}
+
 .message {
   clear: both;
   margin: 10px 0;
