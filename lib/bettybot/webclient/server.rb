@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 $:.push File.expand_path("../../..", __FILE__)
 
 require 'sinatra'
