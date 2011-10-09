@@ -2,38 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="/application.css" type="text/css" />
+    <link rel="stylesheet" href="/shadowbox/shadowbox.css" type="text/css" />
+
     <title>Betty Bot</title>
-    <link rel="stylesheet" href="/application.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/shadowbox/shadowbox.css">
   </head>
   <body>
     <div id="content">
       <% unless @messages.nil? %>
         <ul id="conversation">
           <% @messages.each do |message| %>
-            <li<%= ' id="latest"' if message == @messages.last %> class="message<%= ' mirror' if message.author != 'Betty' %>">
-                <img src="/<%= message.author == 'Betty' ? 'bot' : 'human' %>.png" width="48" height="48" alt="" />
-                <p>
+            <li<%=message_attributes message, @messages %>>
+              <%= author_avatar message %>
+              <p>
                 <strong><%= message.author %>:</strong>
                 <%= message.text.gsub(/((https?:\/\/|www\.)([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/, '<a href="\1">\1</a>').gsub("\n", '<br />') %><br />
-                <% unless message.data.nil? %>
-                  <% if message.data.has_key? 'url' %>
-                    <% if File.extname(message.data['url']).match /\.(jpg|gif|png|jpeg)/i %>
-                      <br /><img src="<%= message.data['url'] %>" alt="" />
-                    <% end %>
-                  <% end %>
-                <% end %>
+                <%= media_from message %>
                 <small><%= message.time.localtime.strftime("%Y-%m-%d %H:%M") %></small>
-                </p>
-              </li>
+              </p>
+            </li>
           <% end %>
         </ul>
       <% end %>
+
       <form id="chat" action="/" method="post" autocomplete="off">
         <input type="text" name="message" autofocus="autofocus" />
         <input type="submit" value="Send" />
       </form>
     </div>
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script type="text/javascript" src="/jquery-ui-1.8.16.custom.min.js"></script>
     <script type="text/javascript" src="/shadowbox/shadowbox.js"></script>

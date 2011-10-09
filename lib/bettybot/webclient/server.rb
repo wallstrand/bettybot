@@ -20,3 +20,27 @@ post '/' do
   betty.reply_to Bettybot::Message.new('You', Time.now, params[:message])
   redirect '/#latest'
 end
+
+helpers do
+  def message_attributes(message, messages)
+    attributes = ''
+    attributes += ' id="latest"' if message == messages.last
+    attributes += ' class="message'
+    attributes += ' mirror' if message.author != 'Betty'
+    attributes += '"'
+  end
+
+  def author_avatar(message)
+    "<img src=\"/#{message.author == 'Betty' ? 'bot' : 'human'}.png\" width=\"48\" height=\"48\" alt=\"\" />"
+  end
+
+  def media_from(message)
+    unless message.data.nil?
+      if message.data.has_key? 'url'
+        if File.extname(message.data['url']).match /\.(jpg|gif|png|jpeg)/i
+          "<br /><img src=\"#{message.data['url']}\" alt=\"\" />"
+        end
+      end
+    end
+  end
+end
