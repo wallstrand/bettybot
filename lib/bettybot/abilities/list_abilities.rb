@@ -5,7 +5,7 @@ module Bettybot::Abilities
  class ListAbilities < Bettybot::Ability
 
    def process(message)
-    if message.text.match /^(list )?abilities$/i
+    if message.text.match(/abilities/i) || message.text.match(/what.*you.*do/i)
       text = ''
       Bettybot::Ability::all.each do |klass|
         ability = klass.new
